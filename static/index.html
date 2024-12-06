@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG System with PDF Support</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Document Q&A System</h1>
+        
+        <div class="upload-section">
+            <h2>Upload Documents</h2>
+            <div class="file-upload-container">
+                <div class="file-upload">
+                    <input type="file" id="fileInput" multiple accept=".pdf,.txt,.docx,.doc,.md">
+                    <div class="upload-label">
+                        <span>Drop files here or click to upload</span>
+                        <small>Supports PDF, TXT, DOCX, DOC, MD</small>
+                    </div>
+                </div>
+                <button onclick="uploadFiles()" class="upload-btn">Upload</button>
+            </div>
+            <div id="uploadStatus"></div>
+            <div id="fileList" class="file-list"></div>
+        </div>
+
+        <div class="query-section">
+            <h2>Ask Questions</h2>
+            <div class="query-input">
+                <input type="text" id="questionInput" placeholder="Enter your question about the documents...">
+                <button onclick="askQuestion()" class="ask-btn">Ask</button>
+            </div>
+            
+            <div class="results">
+                <div class="answer-box">
+                    <h3>Answer</h3>
+                    <div id="answer" class="content-box"></div>
+                </div>
+                
+                <div class="sources-box">
+                    <h3>Sources</h3>
+                    <div id="sources" class="content-box sources-content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Processing...</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
